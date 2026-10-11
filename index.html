@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#481329">
 <meta name="description" content="Varsha & Harsh — Wedding Celebration, 24 & 25 October 2026, Nagpur.">
 <title>Varsha &amp; Harsh | A Wedding Celebration</title>
@@ -94,6 +94,55 @@ body.welcome-locked{overflow:hidden}
 .welcome-confetti i{position:absolute;top:-20px;font-style:normal;animation:welcomeFall linear infinite;opacity:.75}
 @keyframes welcomeFall{to{transform:translateY(115vh) rotate(540deg)}}
 @media(prefers-reduced-motion:reduce){.welcome-screen::before,.welcome-screen::after,.welcome-person,.welcome-heart,.welcome-loader span,.welcome-confetti i{animation:none!important}.welcome-screen,.welcome-open{transition:none}}
+
+
+/* Mobile-first polish for wedding guests opening the invitation on phones */
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-x:hidden}
+img,svg,video,canvas{max-width:100%;height:auto}
+button,a{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+button{min-height:44px}
+a{overflow-wrap:anywhere}
+section[id]{scroll-margin-top:76px}
+@media(max-width:768px){
+  body{font-size:15px}
+  .nav, nav{position:sticky;top:0;z-index:50;max-width:100%;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding:8px 10px;gap:7px}
+  .nav::-webkit-scrollbar,nav::-webkit-scrollbar{display:none}
+  .nav a,nav a{flex:0 0 auto;font-size:.72rem;padding:10px 12px}
+  .hero{min-height:100svh;min-height:100dvh;padding:22px 16px 30px;display:flex;align-items:center}
+  .hero-inner{width:100%;max-width:520px;margin:auto}
+  h1{font-size:clamp(2.5rem,12vw,4.3rem);line-height:.98;overflow-wrap:anywhere}
+  h2{font-size:clamp(2rem,8vw,3rem);line-height:1.05}
+  h3{line-height:1.12}
+  .section{padding:56px 16px}
+  .section-head{padding-inline:2px;margin-bottom:25px}
+  .couple-wrap{width:min(88vw,360px);max-width:100%;margin-inline:auto}
+  .cute-speech{max-width:92%;font-size:.82rem;line-height:1.45;padding:10px 14px}
+  .cute-stamp{font-size:.68rem;max-width:95%;text-align:center;line-height:1.4}
+  .play-card,.card,.event-card,.family-card,.venue-card{width:100%;min-width:0;padding:22px 17px;border-radius:22px}
+  .play-buttons{display:grid;grid-template-columns:1fr;gap:10px}
+  .play-btn{width:100%;min-height:48px;font-size:.92rem}
+  .love-meter{width:100%}
+  .countdown,.countdown-grid,.countdown-timer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .countdown > *, .countdown-grid > *, .countdown-timer > *{min-width:0;padding:12px 8px}
+  .events,.event-grid,.family-grid,.families-grid,.details-grid{grid-template-columns:minmax(0,1fr)!important;gap:14px}
+  .event-card,.family-card{margin-inline:0}
+  .venue-card{overflow-wrap:anywhere}
+  .ornament{margin-top:12px}
+  .footer,footer{padding:35px 16px}
+  .cute-sparkle{font-size:14px;opacity:.7}
+}
+@media(max-width:390px){
+  .hero{padding-inline:12px}
+  .section{padding:46px 13px}
+  h1{font-size:clamp(2.25rem,11.5vw,3.25rem)}
+  .section-head p,.play-card p{font-size:.92rem}
+  .couple-wrap{width:min(92vw,320px)}
+  .countdown,.countdown-grid,.countdown-timer{gap:7px}
+}
+@media(hover:none){
+  .play-btn:hover{transform:none;box-shadow:none}
+}
 
 </style></head>
 <body class="welcome-locked">
