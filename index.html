@@ -223,6 +223,84 @@ body{width:100%;max-width:100%;margin:0;overflow-x:clip;padding-left:var(--safe-
   .welcome-dance-couple{width:min(100%,210px)}
 }
 
+
+/* Refined, lighter controls after the welcome screen (iPhone 15) */
+@media(max-width:430px){
+  .btns{gap:9px;margin-top:18px;align-items:center}
+  .btn,.btn.gold,.venue-info .btn,.couple-controls .btn{
+    width:auto;max-width:100%;min-height:38px;padding:9px 14px;font-size:.78rem;
+    line-height:1.2;gap:6px;border-radius:28px;box-shadow:none;letter-spacing:.01em
+  }
+  .hero .btns .btn{flex:0 1 auto}
+  .couple-controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+  .music-toggle{width:40px;height:40px;font-size:1.05rem;right:12px;bottom:12px}
+  .play-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+  .play-btn{width:auto;flex:1 1 135px;min-height:39px;padding:9px 11px;font-size:.78rem;line-height:1.25;border-radius:24px}
+  .nav{padding:5px;gap:2px;max-width:calc(100% - 18px)}
+  .nav a{min-height:34px;padding:7px 10px;font-size:.55rem;letter-spacing:.06em}
+  .venue-info .btn{margin-top:8px}
+}
+@media(max-width:360px){
+  .btn,.btn.gold,.venue-info .btn,.couple-controls .btn{padding:8px 11px;font-size:.74rem}
+  .play-btn{flex-basis:120px;padding:8px 9px;font-size:.74rem}
+}
+
+/* Elegant compact navigation: prevent the oversized clipped pill on phones */
+.nav{
+  position:fixed;top:12px;left:50%;transform:translateX(-50%);
+  width:max-content;max-width:calc(100% - 24px);display:flex;align-items:center;
+  justify-content:center;gap:2px;padding:5px 7px;
+  background:rgba(255,250,242,.96);border:1px solid #d9bd7a;
+  border-radius:999px;box-shadow:0 5px 20px rgba(42,8,23,.14);
+  backdrop-filter:blur(14px);overflow-x:auto;scrollbar-width:none;
+}
+.nav::-webkit-scrollbar{display:none}
+.nav a{
+  flex:0 0 auto;color:#61233b;text-decoration:none;border-radius:999px;
+  font-size:.62rem;letter-spacing:.045em;font-weight:700;
+  padding:9px 10px;min-height:34px;display:inline-flex;align-items:center;justify-content:center;
+  white-space:nowrap;transition:background .2s,color .2s;
+}
+.nav a:hover,.nav a:focus-visible{background:#f1e4cd;color:#481329;outline:none}
+@media(max-width:430px){
+  .nav{top:10px;max-width:calc(100% - 24px);padding:4px 5px;gap:1px}
+  .nav a{font-size:.56rem;letter-spacing:.025em;padding:8px 8px;min-height:32px}
+}
+@media(max-width:360px){
+  .nav{max-width:calc(100% - 16px);padding:4px}
+  .nav a{font-size:.53rem;padding:7px 7px}
+}
+
+
+/* Fix mobile hero clipping: reserve room below the floating navigation and let content breathe */
+@media (max-width:430px){
+  .hero{
+    min-height:100svh; min-height:100dvh; height:auto; overflow:visible;
+    display:block; padding:88px 16px 82px;
+  }
+  .hero-inner{width:100%;max-width:361px;margin:0 auto;}
+  .hero .eyebrow{font-size:.62rem;letter-spacing:.17em;line-height:1.5;margin-bottom:10px;}
+  .hero h1{font-size:clamp(2.45rem,10vw,3.1rem);line-height:.94;margin:18px 0 16px;}
+  .hero h1 span{font-size:.68em;line-height:.9;margin:8px 0;}
+  .hero .speech-bubble,.hero .quote-bubble,.hero blockquote{max-width:100%;margin:14px auto;padding:11px 13px;font-size:.82rem;line-height:1.4;}
+  .hero .couple-wrap{width:min(100%,245px);margin:10px auto 12px;}
+  .hero .dance-label,.hero .couple-caption{margin:10px auto;padding:7px 10px;font-size:.68rem;line-height:1.35;}
+  .hero .love-note,.hero .mischief-note{margin:9px auto;padding:8px 11px;font-size:.68rem;line-height:1.35;}
+  .hero .couple-controls{margin-top:8px;}
+  .hero p{font-size:.86rem;line-height:1.5;margin:10px auto;}
+  .hero .date-pill{margin:16px auto 10px;padding:9px 13px;font-size:.68rem;line-height:1.35;gap:8px;max-width:100%;}
+  .hero .venue-label,.hero .location-label{font-size:.62rem;letter-spacing:.16em;margin:8px auto;line-height:1.5;}
+  .hero .btns{margin-top:12px;gap:8px;}
+  .hero .btns .btn{min-height:36px;padding:8px 12px;font-size:.72rem;}
+  .hero .scroll-cue{margin-top:18px;font-size:.59rem;line-height:1.4;letter-spacing:.12em;}
+}
+@media(max-width:360px){
+  .hero{padding:84px 12px 76px;}
+  .hero h1{font-size:2.35rem;}
+  .hero .couple-wrap{width:min(100%,220px);}
+  .hero p{font-size:.82rem;}
+}
+
 </style></head>
 <body class="welcome-locked">
 
@@ -330,9 +408,9 @@ body{width:100%;max-width:100%;margin:0;overflow-x:clip;padding-left:var(--safe-
 </div></header>
 <main>
 <section class="section" id="story"><div class="section-head reveal"><div class="kicker">Together with our families</div><h2>A little piece of our story</h2><div class="ornament">❧ ✦ ❧</div></div><div class="intro-card reveal"><p class="copy">From everyday laughter to the moments that made us stop and smile, our story has always been about the little things that become the most precious memories. Now, with hearts full of gratitude and excitement, we begin a new chapter—and it would mean the world to celebrate it with you.</p><div class="script" style="font-size:2.7rem;color:var(--berry)">Varsha &amp; Harsh</div><p class="copy">Your presence is the most beautiful gift.</p></div><div class="section-head reveal" style="margin-top:55px;margin-bottom:0"><div class="kicker">The countdown begins</div><h2 style="font-size:2.6rem">Until we celebrate together</h2><div class="countdown" id="countdown"><div class="timebox"><strong>--</strong><span>Days</span></div><div class="timebox"><strong>--</strong><span>Hours</span></div><div class="timebox"><strong>--</strong><span>Minutes</span></div><div class="timebox"><strong>--</strong><span>Seconds</span></div></div></div></section>
-<section class="section" id="celebration" style="padding-top:25px"><div class="section-head reveal"><div class="kicker">The celebration</div><h2>Two days. One unforgettable beginning.</h2><p>Join us for every little moment—from a warm welcome to the wedding ceremony and a festive feast.</p></div>
-<div class="schedule-grid"><article class="day-card reveal"><div class="day-top"><small>Day One · Saturday</small><h3>24 October</h3></div><div class="event"><time>2:00–3:00 PM</time><div><h4>Lunch at the Venue</h4><p>Lunch will be served depending on your arrival time.</p></div></div><div class="event"><time>6:00 PM</time><div><h4>Hi-Tea</h4><p>A relaxed evening of conversations, smiles and sweet beginnings.</p></div></div><div class="event"><time>8:00 PM</time><div><h4>Ring Ceremony 💍</h4><p>Celebrate the ring ceremony with us, followed by dinner.</p></div></div></article>
-<article class="day-card reveal"><div class="day-top"><small>Day Two · Sunday</small><h3>25 October</h3></div><div class="event"><time>8:00–10:00 AM</time><div><h4>Breakfast</h4><p>Start the day together over a warm, leisurely breakfast.</p></div></div><div class="event"><time>11:00 AM</time><div><h4>Wedding Ceremony ✨</h4><p>The moment we have all been waiting for.</p></div></div><div class="event"><time>12:00–3:00 PM</time><div><h4>Wedding Lunch</h4><p>Continue the celebration with a festive wedding lunch.</p></div></div></article></div></section>
+<section class="section" id="celebration" style="padding-top:25px"><div class="section-head reveal"><div class="kicker">The celebration</div><h2>Two days. One unforgettable beginning.</h2><p>Join us for the two most special moments: the ring ceremony and the wedding ceremony.</p></div>
+<div class="schedule-grid"><article class="day-card reveal"><div class="day-top"><small>Day One · Saturday</small><h3>24 October</h3></div><div class="event"><time>8:00 PM</time><div><h4>Ring Ceremony 💍</h4><p>Celebrate the ring ceremony with us, followed by dinner.</p></div></div></article>
+<article class="day-card reveal"><div class="day-top"><small>Day Two · Sunday</small><h3>25 October</h3></div><div class="event"><time>11:00 AM</time><div><h4>Wedding Ceremony ✨</h4><p>The moment we have all been waiting for.</p></div></div></article></div></section>
 
 <section class="section play-zone" id="little-fun">
   <div class="section-head reveal">
